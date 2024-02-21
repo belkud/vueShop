@@ -2,39 +2,29 @@
 
 
 <template>
-   <div >{{ info }} {{ likes }}</div>
-   <div >{{ someInfo }} {{ dislikes }}</div>
   <button type="button" @click="addLikes"> {{ likes }}</button>
-  <button type="button" @mousemove="addDislikes"> {{ dislikes }}</button>
+  <button type="button" @click="addDislikes"> {{ dislikes }}</button>
 
-    <div class="post">
-      <div>Название: Пост о телефонах</div>
-      <div>Описание: Характеристики</div>
+    <div class="post" v-for="post in posts">
+      <div>Название:{{ post.title }}</div>
+      <div>Описание: {{ post.body }}</div>
     </div>
-    <div class="post">
-      <div>Название: Пост о телефонах</div>
-      <div>Описание: Характеристики</div>
-    </div>
-    <div class="post">
-      <div>Название: Пост о телефонах</div>
-      <div>Описание: Характеристики</div>
-    </div>
-
+  
 
 </template>
 
   <script >
-  // for (let posts of post) {
 
-    
-  // }
   export default {
       data() {
           return {
-            info:'Title' ,
-            someInfo:'Message',
             likes: 0,
             dislikes: 0,
+            posts:[
+              {id:1, title:'JavaScript', body: 'Описание поста' },
+              {id:2, title:'JavaScript 2', body: 'Описание поста 2' },
+              {id:3, title:'JavaScript 3', body: 'Описание поста 3' },
+            ]
           }
         },
         methods: {
