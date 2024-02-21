@@ -6,17 +6,18 @@
    <div >{{ someInfo }}</div>
     <!-- <button type="button" @click="like">количество лайков: {{ like++ }}</button> -->
   <button type="button" @mousemove="this.info= 'что-то новенькое'"> Провести мышкой</button>
-  <button type="button" @click="user()"> Нажать по клику</button>
-  <button type="button" @click="user()"> Нажать по клику</button>
+  <button type="button" v-on:click="addLikes"> {{ likes }}</button>
+  <button type="button" v-on:click="addDislikes"> {{ dislikes }}</button>
 </template>
 
   <script>
   export default {
       data() {
           return {
-            info:'Title' as any,
+            info:'Title' ,
             someInfo:'Message',
-            likes: 0
+            likes: 0,
+            dislikes: 0,
           }
       },
       methods: {
@@ -24,9 +25,11 @@
           // this.info= 'что-то новенькое'
           this.info= chapter
         },
-        likes() {
+        addLikes() {
           this.likes +=1
-
+        },
+        addDislikes () {
+          this.dislikes -=1
         }
       }
   }
@@ -42,6 +45,7 @@
     padding: 5px;
     margin-top: 10px;
     background-color: crimson;
+    width: 150px;
   }
  
   
