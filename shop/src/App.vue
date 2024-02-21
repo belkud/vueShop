@@ -2,15 +2,32 @@
 
 
 <template>
-   <div >{{ info }}</div>
-   <div >{{ someInfo }}</div>
-    <!-- <button type="button" @click="like">количество лайков: {{ like++ }}</button> -->
-  <button type="button" @mousemove="this.info= 'что-то новенькое'"> Провести мышкой</button>
-  <button type="button" v-on:click="addLikes"> {{ likes }}</button>
-  <button type="button" v-on:click="addDislikes"> {{ dislikes }}</button>
+   <div >{{ info }} {{ likes }}</div>
+   <div >{{ someInfo }} {{ dislikes }}</div>
+  <button type="button" @click="addLikes"> {{ likes }}</button>
+  <button type="button" @mousemove="addDislikes"> {{ dislikes }}</button>
+
+    <div class="post">
+      <div>Название: Пост о телефонах</div>
+      <div>Описание: Характеристики</div>
+    </div>
+    <div class="post">
+      <div>Название: Пост о телефонах</div>
+      <div>Описание: Характеристики</div>
+    </div>
+    <div class="post">
+      <div>Название: Пост о телефонах</div>
+      <div>Описание: Характеристики</div>
+    </div>
+
+
 </template>
 
   <script >
+  // for (let posts of post) {
+
+    
+  // }
   export default {
       data() {
           return {
@@ -19,21 +36,18 @@
             likes: 0,
             dislikes: 0,
           }
-      },
-      methods: {
-        user(chapter = 'bebebbebebebeb'){
-          // this.info= 'что-то новенькое'
-          this.info= chapter
         },
-        addLikes() {
-          this.likes +=1
+        methods: {
+          addLikes() {
+            this.likes +=1
+            console.log(this.likes)
         },
         addDislikes () {
           this.dislikes -=1
         }
       }
   }
-
+  
   </script>
 
 
@@ -47,7 +61,13 @@
     background-color: crimson;
     width: 150px;
   }
- 
-  
+ .post {
+  border: 2px solid red;
+  margin-top: 15px;
+  padding: 10px;
+}
+.post:hover {
+  border: 2px solid orange;
+  }
 </style>
  
