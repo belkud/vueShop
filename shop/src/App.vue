@@ -63,8 +63,8 @@
   }
  .post {
   border: 2px solid red;
-  margin-top: 15px;
   padding: 10px;
+  margin-top: 15px;
 }
 .post:hover {
   border: 2px solid orange;
