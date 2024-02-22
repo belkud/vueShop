@@ -1,14 +1,19 @@
  
  <template>
-    <button type="button" @click="addScore">{{ score }}</button>
-    <div class="mass" v-for="mass in massive">Модель:{{ mass.model }}, Стоимость: {{ mass.price +score*100 }}</div>
 
+    <h3>Новый пост</h3>
+    <input class="" type="text" placeholder="Название">
+    <input class="" type="text" placeholder="Описание">
+    <button>Создать</button>
+
+    <button type="button" @click="addScore">{{ score }}</button>
+    <div class="mass" v-for="mass in massive">Модель:{{ mass.model }}, Стоимость: {{ mass.price +score*100}}</div>
+    <div @click="">fghfgh </div>
 </template>
 
 
 
  <script>
-
 
 export default{
   data(){
@@ -20,12 +25,14 @@ export default{
         {model: 'Realme', price: 13000},
       ]
     }
-    // console.log(massive);
   },
   methods: {
     addScore(e) {
       this.score+=1
     },
+    check() {
+      // this.x = (math.random())
+    }
   }
 }
 </script>
