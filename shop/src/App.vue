@@ -1,15 +1,33 @@
  
- <template>
+      <template>
 
-    <h3>Новый пост</h3>
-    <input class="" type="text" placeholder="Название">
-    <input class="" type="text" placeholder="Описание">
-    <button>Создать</button>
+      <form>
+        <h3>Новый пост</h3>
+          <input 
+          v-bind:value="model" 
+          @input="inputTitle"
+        
+          class="element" 
+          type="text" 
+          placeholder="Название">
 
-    <button type="button" @click="addScore">{{ score }}</button>
-    <div class="mass" v-for="mass in massive">Модель:{{ mass.model }}, Стоимость: {{ mass.price +score*100}}</div>
-    <div @click="">fghfgh </div>
-</template>
+          <input 
+          v-bind:value="price" 
+          @input="inputPrice"
+          class="element" 
+          type="text" 
+          placeholder="Описание">
+          <!-- <input class="element" type="text" placeholder="Название">
+          <input class="element" type="text" placeholder="Описание"> -->
+        <button class="create" @click="createPost">Создать</button>
+      </form>
+
+          <div class="mass" v-for="mass in massive">
+            <div>Модель:{{ mass.model }}</div> 
+            <div>Стоимость: {{ mass.price }}</div>
+          </div>
+          <button type="button"  @click="addScore">{{ score }}</button>
+      </template>
 
 
 
@@ -23,16 +41,25 @@ export default{
         {model: 'Sumsung', price: 15000},
         {model: 'Huawei', price: 17000},
         {model: 'Realme', price: 13000},
-      ]
+      ],
+      model: '',
+      price:''
     }
   },
   methods: {
-    addScore(e) {
+    addScore() {
       this.score+=1
     },
-    check() {
-      // this.x = (math.random())
-    }
+
+    createPost() {
+  
+    },
+    inputTitle(event) {
+        this.model = event.target.value
+    },
+    inputPrice(event) {
+        this.price = event.target.value
+    },
   }
 }
 </script>
@@ -64,9 +91,22 @@ export default{
 .mass:hover {
   border: 2px solid orange;
   }
+.element {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+}
 
+.create {
+  margin-bottom: 55px;
+  /* display: flex; */
+  align-self: flex-end;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
 
-  
 </style>
  
 
