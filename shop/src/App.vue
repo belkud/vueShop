@@ -1,7 +1,56 @@
-
-
-
 <template>
+ <button type="button" @mousemove="addScore">Нажать</button>
+ <div>{{ score }}</div>
+</template>
+
+
+<script>
+export default {
+  data() {
+    return {
+      score:0,
+    }
+  },
+  methods: {
+    addScore(e) {
+      this.score+=1
+      // console.log(e.target.value);
+      console.log(e.target);
+      console.log(e.target.innerHTML);
+    }
+  }
+}
+ 
+
+</script>
+
+
+
+
+
+<style scoped>
+  button {
+    color: aliceblue !important;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: crimson;
+    width: 150px;
+  }
+ .post {
+  border: 2px solid red;
+  padding: 10px;
+  margin-top: 15px;
+}
+.post:hover {
+  border: 2px solid orange;
+  }
+
+
+  
+</style>
+ 
+
+<!-- <template>
   <button type="button" @click="addLikes"> {{ likes }}</button>
   <button type="button" @click="addDislikes"> {{ dislikes }}</button>
 
@@ -38,29 +87,4 @@
       }
   }
   
-  </script>
-
-
-
-
-<style scoped>
-  button {
-    color: aliceblue !important;
-    padding: 5px;
-    margin-top: 10px;
-    background-color: crimson;
-    width: 150px;
-  }
- .post {
-  border: 2px solid red;
-  padding: 10px;
-  margin-top: 15px;
-}
-.post:hover {
-  border: 2px solid orange;
-  }
-
-
-  
-</style>
- 
+  </script> -->
