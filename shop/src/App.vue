@@ -2,31 +2,33 @@
       <template>
 
       <form>
-        <h3>Новый пост</h3>
-          <input 
-          v-bind:value="model" 
-          @input="inputTitle"
+        <h3>Создание списка</h3>
+
         
-          class="element" 
-          type="text" 
-          placeholder="Название">
-
-          <input 
-          v-bind:value="price" 
-          @input="inputPrice"
-          class="element" 
-          type="text" 
-          placeholder="Описание">
-          <!-- <input class="element" type="text" placeholder="Название">
-          <input class="element" type="text" placeholder="Описание"> -->
-        <button class="create" @click="createPost">Создать</button>
-      </form>
-
-          <div class="mass" v-for="mass in massive">
-            <div>Модель:{{ mass.model }}</div> 
-            <div>Стоимость: {{ mass.price }}</div>
+        <input 
+        v-bind="model.value"
+        @input="inputModel"
+        class="element" 
+        type="text" 
+        placeholder="Модель">
+        
+        <input 
+        v-bind="price.value"
+        @input="inputPrice"
+        class="element" 
+        type="text" 
+        placeholder="Стоимость">
+          <div class="btn">
+            <button @click="createPost">Создать</button>
+            <button @click="clearPost" type="button">Очистить</button>
           </div>
-          <button type="button"  @click="addScore">{{ score }}</button>
+        </form>
+        
+        <div class="mass" v-for="mass in massive">
+          <div>Модель:{{ mass.model }}</div> 
+          <div>Стоимость: {{ mass.price }}</div>
+        </div>
+        <button type="button"  @click="addScore">{{ score }}</button>
       </template>
 
 
@@ -38,31 +40,136 @@ export default{
     return{
       score:0,
       massive: [
-        {model: 'Sumsung', price: 15000},
+        {model: 'Samsung', price: 15000},
         {model: 'Huawei', price: 17000},
         {model: 'Realme', price: 13000},
       ],
       model: '',
-      price:''
+      price: '',
     }
+
   },
   methods: {
     addScore() {
       this.score+=1
     },
-
-    createPost() {
-  
-    },
-    inputTitle(event) {
-        this.model = event.target.value
+    inputModel(event) {
+       this.model = event.target.value
+      //  console.log(event.target.value.length);
     },
     inputPrice(event) {
-        this.price = event.target.value
+       this.price = event.target.value
+    },
+    createPost(event) {
+       event.preventDefault()
+       const newPost = {
+        id: Date.now(),
+        id: Date.now(),
+        model: this.model,
+        price:this.price
+      }
+    this.massive.push(newPost),
+    this.model = ''
+      this.price = ''
+
+
+
+      console.log(Date.now());
+    },
+    clearPost (event) {
+      this.model = ''
+      this.price = ''
+    }
+    
+  }
+}
+
+</script>
+
+
+
+
+      <!-- <template>
+
+      <form>
+        <h3>Создание списка</h3>
+
+        
+        <input 
+        v-bind:value="model" 
+        @input="inputTitle"
+        class="element" 
+        type="text" 
+        placeholder="Модель">
+        
+        <input 
+        v-bind:value="price" 
+        @input="inputPrice"
+        class="element" 
+        type="text" 
+        placeholder="Стоимость">
+          <div class="btn">
+            <button @click="createPost">Создать</button>
+            <button @click="clearPost" type="button">Очистить</button>
+          </div>
+        </form>
+        
+        <div class="mass" v-for="mass in massive">
+          <div>Модель:{{ mass.model }}</div> 
+          <div>Стоимость: {{ mass.price }}</div>
+        </div>
+        <button type="button"  @click="addScore">{{ score }}</button>
+      </template>
+
+
+
+ <script>
+
+export default{
+  data(){
+    return{
+      score:0,
+      massive: [
+        {model: 'Samsung', price: 15000},
+        {model: 'Huawei', price: 17000},
+        {model: 'Realme', price: 13000},
+      ],
+      model:'',
+      price:''
+    }
+
+  },
+  methods: {
+    addScore() {
+      this.score+=1
+    },
+    inputTitle(event) {
+      this.model = event.target.value
+    },
+    inputPrice(event) {
+      this.price = event.target.value
+    },
+    createPost(event) {
+      event.preventDefault()
+      const newPost = {
+        id: Date.now(),
+        id: Date.now(),
+        model: this.model,
+        price: this.price,
+
+      }
+      this.massive.push(newPost)
+      this.model = ''
+      this.price = ''
+    },
+    clearPost(event) {
+      this.model = ''
+      this.price = ''
     },
   }
 }
-</script>
+
+</script> -->
 
 
 
@@ -87,9 +194,13 @@ export default{
   border: 2px solid red;
   padding: 10px;
   margin-top: 15px;
+  /* position: absolute; */
+  /* width: 100%; */
 }
 .mass:hover {
   border: 2px solid orange;
+  transition: .3s;
+
   }
 .element {
   width: 100%;
@@ -97,11 +208,14 @@ export default{
   margin: 10px;
 }
 
-.create {
+.btn {
   margin-bottom: 55px;
-  /* display: flex; */
   align-self: flex-end;
 }
+.btn>button{
+  margin: 10px;
+}
+
 form {
   display: flex;
   flex-direction: column;
