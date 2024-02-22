@@ -1,28 +1,41 @@
-<template>
- <button type="button" @mousemove="addScore">Нажать</button>
- <div>{{ score }}</div>
+ 
+ <template>
+    <button type="button" @click="addScore">{{ score }}</button>
+
+      <div class="mass" v-for="mass in massive"  > Model: {{ mass.model }}, Device:{{ mass.cost }}рублей</div>
+ 
+
 </template>
 
 
-<script>
-export default {
-  data() {
-    return {
+
+ <script>
+
+
+export default{
+  data(){
+    return{
       score:0,
+      massive:[
+        {model:'sumsung', cost: 15000},
+        {model:'huawei', cost: 18000},
+        {model:'realme', cost: 17500},
+      ],
     }
   },
   methods: {
-    addScore(e) {
+    addScore() {
       this.score+=1
-      // console.log(e.target.value);
-      console.log(e.target);
-      console.log(e.target.innerHTML);
-    }
+    },
   }
 }
- 
-
 </script>
+
+
+
+
+
+
 
 
 
@@ -35,6 +48,7 @@ export default {
     margin-top: 10px;
     background-color: crimson;
     width: 150px;
+    height: 30px;
   }
  .post {
   border: 2px solid red;
@@ -49,6 +63,11 @@ export default {
   
 </style>
  
+
+
+<!-- <script setup="ts">
+import App.vue from './App.vue'
+<script> -->
 
 <!-- <template>
   <button type="button" @click="addLikes"> {{ likes }}</button>
