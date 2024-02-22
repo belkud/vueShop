@@ -45,7 +45,7 @@
 
 <style scoped>
   button {
-    color: aliceblue;
+    color: aliceblue !important;
     padding: 5px;
     margin-top: 10px;
     background-color: crimson;
@@ -59,5 +59,8 @@
 .post:hover {
   border: 2px solid orange;
   }
+
+
+  
 </style>
  
