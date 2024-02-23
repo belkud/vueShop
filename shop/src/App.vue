@@ -5,13 +5,13 @@
         <h3>Создание списка</h3>
 
         
-        <!-- v-bind - связывает данные  (с vue.devTools появляется в input-е) -->
-        <!-- @input - печатает (отслеживает) изменения -->
+        <!-- v-bind - связывает данные -->
+        <!-- @input - впечатывает (отслеживает) изменения -->
         
         <!--! v-bind="model.value" -->
         <input 
-        v-bind:value="model"
         @input="inputModel"
+        v-bind:value="model"
         class="element" 
         type="text" 
         placeholder="Модель">
@@ -62,7 +62,7 @@ export default{
     },
     inputModel(event) {
        this.model = event.target.value
-       console.log(event.target.value.length);
+      //  console.log(event.target.value.length);
     },
     inputPrice(event) {
        this.price = event.target.value
@@ -70,7 +70,6 @@ export default{
     createPost(event) {
        event.preventDefault()
        const newPost = {
-        id: Date.now(),
         id: Date.now(),
         model: this.model,
         price: this.price,
