@@ -5,15 +5,19 @@
         <h3>Создание списка</h3>
 
         
+        <!-- v-bind - связывает данные  (с vue.devTools появляется в input-е) -->
+        <!-- @input - печатает (отслеживает) изменения -->
+        
+        <!--! v-bind="model.value" -->
         <input 
-        v-bind="model.value"
+        v-bind:value="model"
         @input="inputModel"
         class="element" 
         type="text" 
         placeholder="Модель">
         
         <input 
-        v-bind="price.value"
+        v-bind:value="price"
         @input="inputPrice"
         class="element" 
         type="text" 
@@ -25,13 +29,14 @@
         </form>
         
         <div class="mass" v-for="mass in massive">
+          <div>Номер: {{ mass.number }}</div> 
           <div>Модель:{{ mass.model }}</div> 
           <div>Стоимость: {{ mass.price }}</div>
         </div>
         <button type="button"  @click="addScore">{{ score }}</button>
       </template>
 
-
+ 
 
  <script>
 
@@ -40,12 +45,14 @@ export default{
     return{
       score:0,
       massive: [
-        {model: 'Samsung', price: 15000},
-        {model: 'Huawei', price: 17000},
-        {model: 'Realme', price: 13000},
+        {number: 1, model: 'Samsung', price: 15000},
+        {number: 2, model: 'Huawei', price: 17000},
+        {number: 3, model: 'Realme', price: 13000},
       ],
+      // Для отображения
       model: '',
       price: '',
+      number: 4,
     }
 
   },
@@ -55,7 +62,7 @@ export default{
     },
     inputModel(event) {
        this.model = event.target.value
-      //  console.log(event.target.value.length);
+       console.log(event.target.value.length);
     },
     inputPrice(event) {
        this.price = event.target.value
@@ -66,115 +73,24 @@ export default{
         id: Date.now(),
         id: Date.now(),
         model: this.model,
-        price:this.price
+        price: this.price,
+        number: this.number
       }
     this.massive.push(newPost),
     this.model = ''
-      this.price = ''
-
-
-
-      console.log(Date.now());
+    this.price = ''
+    this.number += 1
+    console.log(this.number)
     },
     clearPost (event) {
       this.model = ''
       this.price = ''
     }
-    
+
   }
 }
 
 </script>
-
-
-
-
-      <!-- <template>
-
-      <form>
-        <h3>Создание списка</h3>
-
-        
-        <input 
-        v-bind:value="model" 
-        @input="inputTitle"
-        class="element" 
-        type="text" 
-        placeholder="Модель">
-        
-        <input 
-        v-bind:value="price" 
-        @input="inputPrice"
-        class="element" 
-        type="text" 
-        placeholder="Стоимость">
-          <div class="btn">
-            <button @click="createPost">Создать</button>
-            <button @click="clearPost" type="button">Очистить</button>
-          </div>
-        </form>
-        
-        <div class="mass" v-for="mass in massive">
-          <div>Модель:{{ mass.model }}</div> 
-          <div>Стоимость: {{ mass.price }}</div>
-        </div>
-        <button type="button"  @click="addScore">{{ score }}</button>
-      </template>
-
-
-
- <script>
-
-export default{
-  data(){
-    return{
-      score:0,
-      massive: [
-        {model: 'Samsung', price: 15000},
-        {model: 'Huawei', price: 17000},
-        {model: 'Realme', price: 13000},
-      ],
-      model:'',
-      price:''
-    }
-
-  },
-  methods: {
-    addScore() {
-      this.score+=1
-    },
-    inputTitle(event) {
-      this.model = event.target.value
-    },
-    inputPrice(event) {
-      this.price = event.target.value
-    },
-    createPost(event) {
-      event.preventDefault()
-      const newPost = {
-        id: Date.now(),
-        id: Date.now(),
-        model: this.model,
-        price: this.price,
-
-      }
-      this.massive.push(newPost)
-      this.model = ''
-      this.price = ''
-    },
-    clearPost(event) {
-      this.model = ''
-      this.price = ''
-    },
-  }
-}
-
-</script> -->
-
-
-
-
-
 
 
 
