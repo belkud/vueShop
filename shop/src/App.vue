@@ -108,15 +108,22 @@ export default{
  .mass {
   border: 2px solid red;
   padding: 10px;
-  margin-top: 15px;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: .5s;
   /* position: absolute; */
   /* width: 100%; */
 }
 .mass:hover {
   border: 2px solid orange;
-  transition: .3s;
+  margin-top: 10px;
+  transition: .5s;
 
   }
+
+
+
+
 .element {
   width: 100%;
   padding: 10px;
