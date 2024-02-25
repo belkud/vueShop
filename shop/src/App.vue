@@ -1,49 +1,30 @@
  
       <template>
+        <div>Файл App.Vue</div>
+          <div class="app">
+            <post-form/>
+            <post-list/>
 
-      <form>
-        <h3>Создание списка</h3>
 
-        
-        <!-- v-bind - связывает данные -->
-        <!-- @input - впечатывает (отслеживает) изменения -->
-        
-        <!--! v-bind="model.value" -->
-        <input 
-        @input="inputModel"
-        v-bind:value="model"
-        class="element" 
-        type="text" 
-        placeholder="Модель">
-        
-        <input 
-        v-bind:value="price"
-        @input="inputPrice"
-        class="element" 
-        type="text" 
-        placeholder="Стоимость">
-          <div class="btn">
-            <button @click="createPost">Создать</button>
-            <button @click="clearPost" type="button">Очистить</button>
           </div>
-        </form>
-        
-        <div class="mass" v-for="mass in massive">
-          <div>Номер: {{ mass.number }}</div> 
-          <div>Модель:{{ mass.model }}</div> 
-          <div>Стоимость: {{ mass.price }}</div>
-        </div>
-        <button type="button"  @click="addScore">{{ score }}</button>
+ 
       </template>
 
  
 
  <script>
+import PostForm from "@/components/PostForm.vue";
+import PostList from "@/components/PostList.vue";
+
 
 export default{
+components: {
+  PostForm, PostList
+},
+
   data(){
     return{
-      score:0,
+      // score:0,
       massive: [
         {number: 1, model: 'Samsung', price: 15000},
         {number: 2, model: 'Huawei', price: 17000},
@@ -97,44 +78,7 @@ export default{
 
 
 <style scoped>
-  button {
-    color: aliceblue !important;
-    padding: 5px;
-    margin-top: 10px;
-    background-color: crimson;
-    width: 150px;
-    height: 30px;
-  }
- .mass {
-  border: 2px solid red;
-  padding: 10px;
-  margin-top: 15px;
-  /* position: absolute; */
-  /* width: 100%; */
-}
-.mass:hover {
-  border: 2px solid orange;
-  transition: .3s;
-
-  }
-.element {
-  width: 100%;
-  padding: 10px;
-  margin: 10px;
-}
-
-.btn {
-  margin-bottom: 55px;
-  align-self: flex-end;
-}
-.btn>button{
-  margin: 10px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
+ 
 
 </style>
  
