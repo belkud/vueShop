@@ -29,7 +29,7 @@
         </form>
         
 
-        <button type="button"  @click="addScore">Счёт{{ score }}</button>
+        <!-- <button type="button"  @click="addScore">Счёт{{ score }}</button> -->
         <button type="button2"  @click="addScore2">Счёт 2---{{ score2 }}</button>
 </template>
 
@@ -48,20 +48,16 @@ export default {
     addScore2(event) {
       this.score2+=1
     },
-      //   createPost(event) {
-  //      event.preventDefault()
-  //      const newPost = {
-  //       id: Date.now(),
-  //       model: this.model,
-  //       price: this.price,
-  //       number: this.number
-  //     }
-  //   this.massive.push(newPost),
-  //   this.model = ''
-  //   this.price = ''
-  //   this.number += 1
-  //   console.log(this.number)
-  //   }, 
+    createPost(event) {
+      event.preventDefault()
+      this.mass.id = Date.now();
+      this.$emit('create', this.mass);
+     
+      this.mass = {
+        model: '',
+        price: '',
+      }
+    }
   } 
 }
 
