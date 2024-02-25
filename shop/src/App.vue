@@ -2,8 +2,8 @@
       <template>
         <div>Файл App.Vue</div>
           <div class="app">
-            <post-form/>
             <post-list/>
+            <post-form/>
 
 
           </div>
