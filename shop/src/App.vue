@@ -1,15 +1,19 @@
  
       <template>
-        <div>Файл App.Vue</div>
+        <div class="components">Файл App.Vue</div>
           <div class="app">
-            <post-list
+
+            <post-check />
+            <post-form
+            @create2="createPost"
+            /> 
+            <!--! @create2 - передача данных из ребёнка к родителю -->
+
+            <post-list 
                :massive="massive"
             />
-            <post-form
-               @create="createPost"
-            /> 
+            <!--!  или v-bind:massive="massive"  - отправка массива в postList-->
 
-            <!--или v-bind:massive="massive"  - отправка массива в postList-->
 
           </div>
  
@@ -18,13 +22,14 @@
  
 
  <script>   
-import PostForm from "@/components/PostForm.vue";
-import PostList from "./components/PostList.vue";
+import PostCheck from '@/components/PostCheck.vue'
+import PostForm from "./components/PostForm.vue";
+import PostList from "@/components/PostList.vue";
 
 
 export default{
 components: {
-  PostForm, PostList
+  PostForm, PostList, PostCheck
 },
 
   data(){
@@ -50,8 +55,21 @@ components: {
 
 
 
-<style scoped>
- 
+<style>
+ button {
+    color: aliceblue !important;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: crimson;
+    width: 150px;
+    height: 30px;
+  }
+  .components {
+    color: red;
+    text-shadow: 2px 0px 8px white;
+    font-size: 1.2em;
+    margin-top: 25px;
+}
 
 </style>
  

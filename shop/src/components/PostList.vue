@@ -1,6 +1,6 @@
 
 <template>
-  <div style="margin-top: 100px;">Файл PostList</div>
+  <div  class="components">Файл PostList</div>
         <div class="mass" v-for="mass in massive">
           <div>Номер: {{ mass.number }}</div> 
           <div>Модель:{{ mass.model }}</div> 

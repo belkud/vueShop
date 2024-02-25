@@ -1,6 +1,6 @@
 
 <template>
-  <div>Файл PostForm</div>
+  <div class="components">Файл PostForm</div>
      <form>
         <h3>Создание списка</h3>
 
@@ -51,7 +51,7 @@ export default {
     createPost(event) {
       event.preventDefault()
       this.mass.id = Date.now();
-      this.$emit('create', this.mass);
+      this.$emit('create2', this.mass);
      
       this.mass = {
         model: '',
@@ -63,19 +63,9 @@ export default {
 
 </script>
 
-
+ 
 
 <style scoped>
-
-button {
-    color: aliceblue !important;
-    padding: 5px;
-    margin-top: 10px;
-    background-color: crimson;
-    width: 150px;
-    height: 30px;
-  }
-
 .element {
   width: 100%;
   padding: 10px;
@@ -95,4 +85,8 @@ form {
   flex-direction: column;
 }
 
+.components {
+    color: red;
+
+}
 </style>
