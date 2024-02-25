@@ -1,6 +1,6 @@
 
 <template>
-  <div>Файл PostList</div>
+  <div style="margin-top: 100px;">Файл PostList</div>
         <div class="mass" v-for="mass in massive">
           <div>Номер: {{ mass.number }}</div> 
           <div>Модель:{{ mass.model }}</div> 
@@ -9,7 +9,14 @@
 </template>
 
 <script>
-
+  export default {
+    props: {
+      massive: {
+        type: Array,
+        required: true
+      }
+    }
+  }
 
 </script>
 

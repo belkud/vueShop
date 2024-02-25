@@ -7,18 +7,18 @@
         
         <!-- v-bind - связывает данные -->
         <!-- @input - впечатывает (отслеживает) изменения -->
-        
-        <!-- ! v-bind="model.value" -->
+        <!-- -bind:value="mass.model"
+        @input="mass.model=$event.target.value" -->
+
+        <!--! v-model - тоже делает двустороннее связывание -->
         <input 
-        @input="inputModel"
-        v-bind:value="model"
+        v-model="mass.model"
         class="element" 
         type="text" 
         placeholder="Модель">
         
         <input 
-        v-bind:value="price"
-        @input="inputPrice"
+        v-model="mass.price"
         class="element" 
         type="text" 
         placeholder="Стоимость">
@@ -29,14 +29,41 @@
         </form>
         
 
-        <button type="button"  @click="addScore">{{ score }}</button>
+        <button type="button"  @click="addScore">Счёт{{ score }}</button>
+        <button type="button2"  @click="addScore2">Счёт 2---{{ score2 }}</button>
 </template>
 
 <script >
-import Drawer from '@/App.vue'
-import { ref } from 'vue'
-
-
+export default {
+  data(){
+    return {
+      score2: 0,
+      mass: {
+        model:'',
+        price:'',
+      }
+    }
+  },
+  methods: {
+    addScore2(event) {
+      this.score2+=1
+    },
+      //   createPost(event) {
+  //      event.preventDefault()
+  //      const newPost = {
+  //       id: Date.now(),
+  //       model: this.model,
+  //       price: this.price,
+  //       number: this.number
+  //     }
+  //   this.massive.push(newPost),
+  //   this.model = ''
+  //   this.price = ''
+  //   this.number += 1
+  //   console.log(this.number)
+  //   }, 
+  } 
+}
 
 </script>
 
