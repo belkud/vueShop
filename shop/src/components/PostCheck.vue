@@ -1,6 +1,6 @@
 <template>
     <div class="components">Файл PostCheck</div>
-    <button @click="checkButton"> {{ checkScore }}</button>
+    <button @click="checkButton"> <slot>{{ checkScore }}</slot> </button>
 </template>
 
 <script>
