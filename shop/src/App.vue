@@ -2,12 +2,13 @@
       <template>
         <div class="components">Файл App.Vue</div>
           <div class="app">
-
+            <post-item />
             <post-check />
             <post-form
             @create2="createPost"
             /> 
             <!--! @create2 - передача данных из ребёнка к родителю -->
+
 
             <post-list 
                :massive="massive"
@@ -25,11 +26,12 @@
 import PostCheck from '@/components/PostCheck.vue'
 import PostForm from "./components/PostForm.vue";
 import PostList from "@/components/PostList.vue";
+import PostItem from "@/components/PostItem.vue"
 
 
 export default{
 components: {
-  PostForm, PostList, PostCheck
+  PostForm, PostList, PostCheck, PostItem
 },
 
   data(){
@@ -49,7 +51,6 @@ components: {
 }
 
 </script>
-
 
 
 
