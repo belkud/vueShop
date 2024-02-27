@@ -29,8 +29,8 @@
         </form>
         
 
-        <!-- <button type="button"  @click="addScore">Счёт{{ score }}</button> -->
         <button type="button2"  @click="addScore2">Счёт 2---{{ score2 }}</button>
+        <!-- <button type="button"  @click="addScore">Счёт{{ score }}</button> -->
 </template>
 
 <script >
