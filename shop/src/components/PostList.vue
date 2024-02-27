@@ -27,13 +27,10 @@
   border: 2px solid red;
   padding: 10px;
   margin-top: 15px;
-  /* position: absolute; */
-  /* width: 100%; */
 }
 .mass:hover {
   border: 2px solid orange;
   transition: .3s;
-
   }
 
 
