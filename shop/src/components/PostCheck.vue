@@ -39,6 +39,11 @@ export default {
 }
 </script>
 
+
+
+
 <style scoped>
-div {}
+.changeColor {
+    color: red;
+}
 </style>

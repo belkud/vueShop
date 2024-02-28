@@ -42,7 +42,7 @@ export default {
       mass: {
         model:'',
         price:'',
-        number:0,
+        number: 3,
       },
     }
   },
@@ -57,14 +57,12 @@ export default {
     createPost(event) {
       event.preventDefault()
       this.mass.id = Date.now();
-      this.mass.number+=1;
-      this.$emit('create2', this.mass);
+      this.mass.number++
+      this.$emit('create2', {...this.mass});
       
-      this.mass = {
-        model: '',
-        price: '',
-        number:'',
-      }
+      this.mass.model = ''
+      this.mass.price = ''
+      
     }
   } 
 }
