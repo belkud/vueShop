@@ -4,7 +4,8 @@
      <form>
         <h3>Создание списка</h3>
 
-        
+  
+
         <!-- v-bind - связывает данные -->
         <!-- @input - впечатывает (отслеживает) изменения -->
         <!-- -bind:value="mass.model"
@@ -41,24 +42,28 @@ export default {
       mass: {
         model:'',
         price:'',
-        number:3,
-      }
+        number:0,
+      },
     }
   },
   methods: {
+    clickNumber2(event){
+      event.preventDefault()
+      this.number2+=1
+    },
     addScore2(event) {
       this.score2+=1
     },
     createPost(event) {
       event.preventDefault()
       this.mass.id = Date.now();
-      this.mass.number+=1
+      this.mass.number+=1;
       this.$emit('create2', this.mass);
-     
+      
       this.mass = {
         model: '',
         price: '',
-        number: number+=1
+        number:'',
       }
     }
   } 
