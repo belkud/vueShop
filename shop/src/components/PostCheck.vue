@@ -16,8 +16,8 @@
 
     <div v-if="checkScore >= 3 && checkScore <= 10">{{ info2 }}</div>
     
-    <div style="margin-top: 25px;"> <span v-if="checkScore>=1">{{ info }}</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis reiciendis facilis voluptas! Magni, at impedit.
-        In incidunt vero, veritatis quis distinctio sunt eveniet iure, asperiores blanditiis ea ducimus eaque et.</div>
+    <div style="margin-top: 25px;"> <span v-if="checkScore>=1">{{ info }}</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis reiciendis facilis voluptas! Magni, at impedit.<br>
+        <span style="color: red;" v-if="checkScore>=1">{{ info2 }}</span> In incidunt vero, veritatis quis distinctio sunt eveniet iure, asperiores blanditiis ea ducimus eaque et.</div>
 </template>
 
 <script>
