@@ -2,18 +2,17 @@
 
 <template>
 <div class="menu">
-    <h3>Вход на сайт</h3>
+    <h1 style="text-align: center; margin-top: 10%;">Вход на сайт</h1>
     <div>
         
     </div>
     <input type="text" v-model="name" placeholder="Имя">
-    <input type="text" v-model="surname" placeholder="Фамилия">
     <input type="text" v-model="mail" placeholder="Почта">
+    <input type="password" v-model="password" placeholder="Пароль">
     
     <div class="error">{{ this.error }}</div>
     <button @click="sendInfo"> Отправить</button>
     <div>{{ users }}</div>
-    <!-- <div>вывод ошибки</div> -->
     <!-- (в конце разные цвета border) -->
 </div>
 </template>
@@ -25,8 +24,8 @@
         data(){
             return{
                 name:'',
-                surname:'',
                 mail:'',
+                password:'',
                 users:[],
                 error:'',
             }
@@ -35,20 +34,23 @@
                 if (this.name=='') {
                     this.error = '(Введите имя)'
                   return 
-                } else if(this.surname=='') {
-    this.error= 'Введите фамилию'
-    return
-} else if (this.mail=='') {
-    this.error = 'Введите почту'
-    return
-}
+                } else if(this.mail=='') {
+                    this.error= '(Введите почту)'
+                    return
+                } else if (this.password=='') {
+                    this.error = '(Введите пароль)'
+                    return
+                } else if (this.name==123 && this.mail==123 && this.password==123) {
+                    this.error = 'Данные верны'
+                } else {
+                    this.error = 'Вы ввели неверные данные'
+                }
 
 
                 this.users.push({
                     name: this.name,
-                    surname: this.surname,
                     mail: this.mail,
-                    users:[]
+                    password: this.password,
                 })
                 console.log(this.users)
             }
@@ -74,8 +76,9 @@
 .menu>input{
     padding: 10px;
     border-radius: 5px;
-    /* width: 50%; */
+    width: 30%;
     margin: 0 auto;
+    background-color: lightblue;
 }
 .error {
     padding: 0px;
