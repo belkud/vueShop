@@ -1,15 +1,16 @@
 
 
 <template>
+<div class="menu">
     <h3>Вход на сайт</h3>
-        <div class="menu">
     <div>
-        <input type="text" v-model="name" placeholder="Имя">
-        <div class="error">{{ this.error }}</div>
+        
     </div>
-
+    <input type="text" v-model="name" placeholder="Имя">
     <input type="text" v-model="surname" placeholder="Фамилия">
     <input type="text" v-model="mail" placeholder="Почта">
+    
+    <div class="error">{{ this.error }}</div>
     <button @click="sendInfo"> Отправить</button>
     <div>{{ users }}</div>
     <!-- <div>вывод ошибки</div> -->
@@ -70,13 +71,10 @@
     flex-direction: column;
     gap: 20px;
 }
-.menu>div {
-display: flex;
-}
-
-.menu>div>input{
+.menu>input{
     padding: 10px;
     border-radius: 5px;
+    /* width: 50%; */
     margin: 0 auto;
 }
 .error {
