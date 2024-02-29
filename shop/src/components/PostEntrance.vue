@@ -1,13 +1,33 @@
 
 
 <template>
-    dsfsdf
+<div class="menu">
+    <input type="text" v-model="name" placeholder="Имя">
+    <input type="text" v-model="surname" placeholder="Фамилия">
+    <input type="text" v-model="mail" placeholder="Почта">
+    <button> Отправить</button>
+    <p>вывод массива</p>
+    <div>вывод ошибки</div>
+</div>
 </template>
 
 
+<script>
 
+</script>
 
-
+<style>
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.menu>input{
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+}
+</style>
 
 
 
