@@ -67,6 +67,7 @@ components: {
     width: 150px;
     height: 30px;
     cursor: pointer;
+    border-radius: 5px;
   }
   .components {
     color: red;

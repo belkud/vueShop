@@ -1,20 +1,68 @@
 
 
 <template>
-<div class="menu">
-    <input type="text" v-model="name" placeholder="Имя">
+    <h3>Вход на сайт</h3>
+        <div class="menu">
+    <div>
+        <input type="text" v-model="name" placeholder="Имя">
+        <div class="error">{{ this.error }}</div>
+    </div>
+
     <input type="text" v-model="surname" placeholder="Фамилия">
     <input type="text" v-model="mail" placeholder="Почта">
-    <button> Отправить</button>
-    <p>вывод массива</p>
-    <div>вывод ошибки</div>
+    <button @click="sendInfo"> Отправить</button>
+    <div>{{ users }}</div>
+    <!-- <div>вывод ошибки</div> -->
+    <!-- (в конце разные цвета border) -->
 </div>
 </template>
 
 
 <script>
 
+    export default {
+        data(){
+            return{
+                name:'',
+                surname:'',
+                mail:'',
+                users:[],
+                error:'',
+            }
+        }, methods:{
+            sendInfo(){
+                if (this.name=='') {
+                    this.error = '(Введите имя)'
+                  return 
+                } else if(this.surname=='') {
+    this.error= 'Введите фамилию'
+    return
+} else if (this.mail=='') {
+    this.error = 'Введите почту'
+    return
+}
+
+
+                this.users.push({
+                    name: this.name,
+                    surname: this.surname,
+                    mail: this.mail,
+                    users:[]
+                })
+                console.log(this.users)
+            }
+        }
+    }
+
 </script>
+
+
+
+
+
+
+
+
 
 <style>
 .menu{
@@ -22,10 +70,18 @@
     flex-direction: column;
     gap: 20px;
 }
-.menu>input{
+.menu>div {
+display: flex;
+}
+
+.menu>div>input{
     padding: 10px;
     border-radius: 5px;
-    width: 50%;
+    margin: 0 auto;
+}
+.error {
+    padding: 0px;
+    margin: 0 auto;
 }
 </style>
 
