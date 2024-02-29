@@ -24,7 +24,7 @@
         type="text" 
         placeholder="Стоимость">
           <div class="btn">
-            <button @click="createPost">Создать</button>
+            <button type="button" @click="createPost">Создать</button>
             <button @click="" type="button">Очистить</button>
           </div>
         </form>
@@ -55,7 +55,8 @@ export default {
       this.score2+=1
     },
     createPost(event) {
-      event.preventDefault()
+      // event.preventDefault()
+      // или указать type="button" в самой кнопке
       this.mass.id = Date.now();
       this.mass.number++
       this.$emit('create2', {...this.mass});

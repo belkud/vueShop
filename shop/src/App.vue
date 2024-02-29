@@ -1,37 +1,39 @@
  
       <template>
-        <div class="components">Файл App.Vue</div>
+        <!-- <div class="components">Файл App.Vue</div> -->
           <div class="app">
-            <post-item />
-            <post-check />
-            <post-form
+            <!-- <post-item /> -->
+            <post-entrance/>
+            <!-- <post-form
             @create2="createPost"
-            /> 
+            />  -->
             <!--! @create2 - передача данных из ребёнка к родителю -->
 
 
-            <post-list 
+            <!-- <post-list 
                :massive="massive"
-            />
+            /> -->
             <!--!  или v-bind:massive="massive"  - отправка массива в postList-->
 
 
           </div>
- 
       </template>
 
- 
 
- <script>   
-import PostCheck from '@/components/PostCheck.vue'
+
+<script>   
+import PostEntrance  from "@/components/PostEntrance.vue"
 import PostForm from "./components/PostForm.vue";
 import PostList from "@/components/PostList.vue";
 import PostItem from "@/components/PostItem.vue"
 
 
+
+
+
 export default{
 components: {
-  PostForm, PostList, PostCheck, PostItem
+  PostForm, PostList, PostEntrance, PostItem
 },
 
   data(){
@@ -64,6 +66,7 @@ components: {
     background-color: crimson;
     width: 150px;
     height: 30px;
+    cursor: pointer;
   }
   .components {
     color: red;
