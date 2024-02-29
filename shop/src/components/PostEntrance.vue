@@ -9,10 +9,17 @@
     <input type="text" v-model="name" placeholder="Имя">
     <input type="text" v-model="mail" placeholder="Почта">
     <input type="password" v-model="password" placeholder="Пароль">
-    
+    <!-- <div>{{ password }}</div> -->
     <div class="error">{{ this.error }}</div>
-    <button @click="sendInfo"> Отправить</button>
-    <div>{{ users }}</div>
+    <button @click="sendInfo">Отправить</button>
+    <div class="user" v-for="user of users">
+        <div>
+            <div>Пользователь:<b>{{ user.name }}</b></div>
+                <div>Почта:{{ user.mail }}</div>
+            <div>Пароль:{{ user.password }} {{ user.number }}</div>
+        </div>
+    <button @click="deleteUser(index)">Удалить</button>
+    </div>
     <!-- (в конце разные цвета border) -->
 </div>
 </template>
@@ -28,6 +35,7 @@
                 password:'',
                 users:[],
                 error:'',
+                number:0,
             }
         }, methods:{
             sendInfo(){
@@ -46,13 +54,23 @@
                     this.error = 'Вы ввели неверные данные'
                 }
 
-
                 this.users.push({
                     name: this.name,
                     mail: this.mail,
                     password: this.password,
+                    number: this.number
+                    
                 })
-                console.log(this.users)
+                this.name=''
+                this.mail=''
+                this.password=''
+                // this.user.number++
+                // this.$emit('sendInfo', {...this.user});
+                // console.log(this.number)
+            },
+            deleteUser () {
+                
+                this.users.splice(0,1)
             }
         }
     }
@@ -60,14 +78,11 @@
 </script>
 
 
+ 
 
 
 
-
-
-
-
-<style>
+<style scoped>
 .menu{
     display: flex;
     flex-direction: column;
@@ -83,115 +98,27 @@
 .error {
     padding: 0px;
     margin: 0 auto;
+    min-height: 25px;
+}
+
+.user {
+    background-color: rgb(61, 171, 207);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.user>div {
+    display: flex;
+    gap: 50px;
 }
 </style>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <template>
-    <div style="color: greenyellow;" class="components">PostCheck</div>
-    <div>Вычисление: <span v-if="score>=1">{{ info }}</span></div>
-    <button type="button" @click="addScore()">{{ score }}</button>
-    <div v-if="score<=10"> скрыть элемент после 10</div>
-    <div v-if="score>=3">первый абзац</div>
-    <div v-if="score>=6">второй абзац</div>
-
-    <input type="text" placeholder="name" v-model="name">
-    <input style="margin-left:10px ;" type="text" placeholder="email" v-model="mail">
-    <div class="flex">
-        <button @click="sendInfo()"> Отправить</button>
-        
-        <p>массив: {{ users }} <br></p>
-        <p >ошибка: {{ error }} <br></p>
-        
-        <div>имя: {{ name }}</div>
-        <div>почта: {{ mail }}</div>
-    </div>
-
-</template>
-
-<script>
-
-export default {
-    data() {
-        return {
-            users: [],
-            score: 0,
-            info: 'первый',
-            name:'',
-            mail: '',
-            error:'',
-        }
-    },
-    methods: {
-        addScore() {
-            this.score++
-            this.info = 'hello'
-        },
-        sendInfo(){
-            if (this.name=='') {
-                this.error='Введите имя'
-                return
-            } else if (this.mail=='') {
-                this.error='Введите почту'
-                return
-            } else {
-                this.error = ''
-                
-            }
-
-            this.users.push({
-                name: this.name,
-                mail: this.mail,
-            })
-            console.log(this.name);
-        }
-    }
-}
-
-</script>
-
-<style scoped>
-.flex {
-    margin-top: 10px;
-}
-
-
-</style>
-
- -->
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
