@@ -96,4 +96,4 @@ DATABASE_URL="postgresql://postgres:(Пароль)@localhost:5432/(назван�
 ---
   
 
-Котэ =^-^= (https://img.razrisyika.ru/kart/24/1200/94318-kot-saymon-4.jpg)
+<!-- Котэ =^-^= (https://img.razrisyika.ru/kart/24/1200/94318-kot-saymon-4.jpg) -->
