@@ -11,12 +11,12 @@
     <input type="password" v-model="password" placeholder="Пароль">
     <!-- <div>{{ password }}</div> -->
     <div class="error">{{ this.error }}</div>
-    <button @click="sendInfo">Отправить</button>
+    <button class="btn" @click="sendInfo">Отправить</button>
     <div class="user" v-for="user of users">
         <div>
-            <div>Пользователь:<b>{{ user.name }}</b></div>
-                <div>Почта:{{ user.mail }}</div>
-            <div>Пароль:{{ user.password }} {{ user.number }}</div>
+            <div>Пользователь: <b>{{ user.name }}</b></div>
+                <div>Почта: {{ user.mail }}</div>
+            <div>Пароль: {{ user.password }} </div>
         </div>
     <button @click="deleteUser(index)">Удалить</button>
     </div>
@@ -35,7 +35,7 @@
                 password:'',
                 users:[],
                 error:'',
-                number:0,
+                // number:0,
             }
         }, methods:{
             sendInfo(){
@@ -58,7 +58,7 @@
                     name: this.name,
                     mail: this.mail,
                     password: this.password,
-                    number: this.number
+                    // number: this.number
                     
                 })
                 this.name=''
@@ -113,6 +113,17 @@
 .user>div {
     display: flex;
     gap: 50px;
+}
+
+.btn {
+    background-color: lightblue;
+    margin-left: 60%;
+    transition: .3s;
+}
+.btn:hover {
+    background-color:red;
+    transition: .3s;
+
 }
 </style>
 

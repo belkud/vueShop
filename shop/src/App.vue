@@ -1,7 +1,7 @@
  
       <template>
-        <div class="components">Файл App.Vue</div>
         
+        <!-- <div class="components">Файл App.Vue</div> -->
         <div class="app">
           <post-header/>  
           
@@ -67,6 +67,7 @@ components: {
 
 
 <style>
+
  button {
     color: aliceblue !important;
     padding: 5px;

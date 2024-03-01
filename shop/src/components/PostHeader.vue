@@ -1,8 +1,13 @@
 
 
+<!-- 1. удалить файл base.css -->
+<!-- 2. Возможно помочь со splice в PostEntrance  -->
 
 <template>
-class="text-3xl font-bold underline"
+    <div class="text-3xl font-bold underline">
+        dafdf
+    </div>
+
 </template>
 
 <script>
