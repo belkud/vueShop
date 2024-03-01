@@ -1,13 +1,16 @@
 
-<h3>Установка tailwind</h3>
+
+
+#### Установка tailwind
 ```
 https://tailwindcss.ru/docs/guides/vite/#vue
 ```
-<h3>Обучающий курс по tailwind</h3>
+#### Обучающий курс по tailwind
 ```
 https://www.youtube.com/watch?v=fyK1sW1CNug
 ```
 
+ 
 
 
 <h3>Работа с VUE</h3>
