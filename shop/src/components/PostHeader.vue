@@ -6,7 +6,7 @@
 <template>
     <div class=" cursor-pointer flex text-xl gap-20 mt-5 w-full ml-14">
         <div class=" cursor-pointer">Каталог &#128366;</div>
-            <input placeholder="&#128269; Поиск по сайту" class=" rounded-sm w-2/5 " style="background-color: rgb(61, 171, 207); color: aliceblue;" >
+            <input placeholder="&#128269; Поиск по сайту" class=" rounded-sm w-2/5 px-3"  >
                 <div class=" cursor-pointer">Заказы 	&#128504;</div>
                 <div class=" cursor-pointer">Избранное &#9829;</div>
             <div class=" cursor-pointer">Корзина &#128722</div>
@@ -21,5 +21,8 @@
 </script>
 
 <style>
-
+input {
+    background-color: rgb(3, 35, 46); 
+    color: aliceblue;
+}
 </style>
