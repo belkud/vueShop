@@ -1,7 +1,7 @@
 
 
 <template>
-<div class="menu" style="margin-bottom: 500px;">
+<div v-if="!isLogin" class="menu" style="margin-bottom: 500px;">
     <h1 style="text-align: center; margin-top: 10%; font-weight: 600; font-size: 1.1em;">Вход на сайт</h1>
     <div>
         
@@ -12,15 +12,15 @@
     <!-- <div>{{ password }}</div> -->
     <div class="error">{{ this.error }}</div>
     <button class="btn" @click="sendInfo">Отправить</button>
-    <div class="user" v-for="user of users">
-        <div>
-            <div>Пользователь: <b>{{ user.name }}</b></div>
-                <div>Почта: {{ user.mail }}</div>
-            <div>Пароль: {{ user.password }} </div>
-        </div>
-    <button class="btn" @click="deleteUser(index)">Удалить</button>
-    </div>
     <!-- (в конце разные цвета border) -->
+</div>
+<div class="user" v-for="user of users">
+    <div>
+        <div>Пользователь: <b>{{ user.name }}</b></div>
+            <div>Почта: {{ user.mail }}</div>
+        <div>Пароль: {{ user.password }} </div>
+    </div>
+<button class="btn" @click="deleteUser(index)">Удалить</button>
 </div>
 </template>
 
@@ -35,6 +35,7 @@
                 password:'',
                 users:[],
                 error:'',
+                isLogin: false,
                 // number:0,
             }
         }, methods:{
@@ -50,6 +51,7 @@
                     return
                 } else if (this.name==123 && this.mail==123 && this.password==123) {
                     this.error = 'Данные верны'
+                    this.isLogin = true
                 } else {
                     this.error = 'Вы ввели неверные данные'
                 }
@@ -91,7 +93,7 @@
 .menu>input{
     padding: 10px;
     border-radius: 5px;
-    width: 30%;
+    width: 20%;
     margin: 0 auto;
     background-color: lightblue;
 }

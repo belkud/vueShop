@@ -4,9 +4,9 @@
 <!-- 2. Возможно помочь со splice в PostEntrance  -->
 
 <template>
-    <div class=" cursor-pointer flex text-xl gap-24 mt-5 w-full ml-14">
+    <div class=" cursor-pointer flex text-xl gap-20 mt-5 w-full ml-14">
         <div class=" cursor-pointer">Каталог &#128366;</div>
-            <input placeholder="&#128269; Поиск по сайту" class=" rounded-sm w-2/5" >
+            <input placeholder="&#128269; Поиск по сайту" class=" rounded-sm w-2/5 " style="background-color: rgb(61, 171, 207); color: aliceblue;" >
                 <div class=" cursor-pointer">Заказы 	&#128504;</div>
                 <div class=" cursor-pointer">Избранное &#9829;</div>
             <div class=" cursor-pointer">Корзина &#128722</div>
