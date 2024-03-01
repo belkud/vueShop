@@ -4,9 +4,9 @@
 <!-- 2. Возможно помочь со splice в PostEntrance  -->
 
 <template>
-    <div class=" flex text-xl gap-3">
-        <div class="">Каталог &#128366;</div>
-        <input placeholder="&#128269; Поиск по сайту" class=" place-content-center" >
+    <div class=" flex text-xl gap-3 mt-5">
+        <div>Каталог &#128366;</div>
+        <input placeholder="&#128269; Поиск по сайту" class=" rounded-sm w-2/5" >
         <div>Заказы 	&#128504;</div>
         <div>Избранное &#9829;</div>
         <div>Корзина &#128722</div>
