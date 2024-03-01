@@ -1,4 +1,11 @@
 
+<h3>Установка tailwind</h3>
+```
+https://tailwindcss.ru/docs/guides/vite/#vue
+```
+
+
+
 <h3>Работа с VUE</h3>
 
 #### 1. Устанавливаем пакет

@@ -1,9 +1,15 @@
  
       <template>
-        <!-- <div class="components">Файл App.Vue</div> -->
-          <div class="app">
-            <!-- <post-item /> -->
-            <post-entrance/>
+        <div class="components">Файл App.Vue</div>
+        
+        <div class="app">
+          <post-header/>  
+          
+          <post-entrance/>
+          
+          
+          <!-- <post-item /> -->
+            
             <!-- <post-form
             @create2="createPost"
             />  -->
@@ -23,9 +29,10 @@
 
 <script>   
 import PostEntrance  from "@/components/PostEntrance.vue"
-import PostForm from "./components/PostForm.vue";
-import PostList from "@/components/PostList.vue";
-import PostItem from "@/components/PostItem.vue"
+import PostHeader from "./components/PostHeader.vue";
+// import PostForm from "./components/PostForm.vue";
+// import PostList from "@/components/PostList.vue";
+// import PostItem from "@/components/PostItem.vue"
 
 
 
@@ -33,7 +40,8 @@ import PostItem from "@/components/PostItem.vue"
 
 export default{
 components: {
-  PostForm, PostList, PostEntrance, PostItem
+  PostHeader, PostEntrance, 
+  // PostForm, PostList, PostItem
 },
 
   data(){
