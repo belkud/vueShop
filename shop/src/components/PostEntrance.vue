@@ -1,8 +1,8 @@
 
 
 <template>
-<div class="menu">
-    <h1 style="text-align: center; margin-top: 10%;">Вход на сайт</h1>
+<div class="menu" style="margin-bottom: 500px;">
+    <h1 style="text-align: center; margin-top: 10%; font-weight: 600; font-size: 1.1em;">Вход на сайт</h1>
     <div>
         
     </div>
@@ -18,7 +18,7 @@
                 <div>Почта: {{ user.mail }}</div>
             <div>Пароль: {{ user.password }} </div>
         </div>
-    <button @click="deleteUser(index)">Удалить</button>
+    <button class="btn" @click="deleteUser(index)">Удалить</button>
     </div>
     <!-- (в конце разные цвета border) -->
 </div>
@@ -108,6 +108,8 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .user>div {
@@ -119,11 +121,15 @@
     background-color: lightblue;
     margin-left: 60%;
     transition: .3s;
+    min-width: 150px;
 }
 .btn:hover {
     background-color:red;
     transition: .3s;
 
+}
+input::placeholder {
+    color: white;
 }
 </style>
 
