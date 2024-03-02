@@ -1,7 +1,7 @@
 
 
 <template>
-<div v-if="!isLogin" class="menu" style="margin-bottom: 500px;">
+<div v-if="!isLogin" class="menu">
     <h1 style="text-align: center; margin-top: 10%; font-weight: 600; font-size: 1.1em;">Вход на сайт</h1>
     <div>
         

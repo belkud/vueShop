@@ -7,7 +7,9 @@
           
           <post-entrance/>
           
-          
+          <post-footer/>
+
+
           <!-- <post-item /> -->
             
             <!-- <post-form
@@ -30,6 +32,7 @@
 <script>   
 import PostEntrance  from "@/components/PostEntrance.vue"
 import PostHeader from "./components/PostHeader.vue";
+import PostFooter from "./components/PostFooter.vue";
 // import PostForm from "./components/PostForm.vue";
 // import PostList from "@/components/PostList.vue";
 // import PostItem from "@/components/PostItem.vue"
@@ -40,7 +43,7 @@ import PostHeader from "./components/PostHeader.vue";
 
 export default{
 components: {
-  PostHeader, PostEntrance, 
+  PostHeader, PostEntrance, PostFooter
   // PostForm, PostList, PostItem
 },
 
