@@ -1,15 +1,19 @@
 
 <template >
     <footer>
-        <div class="flex bg-slate-800 mt-8 gap-16 p-3">
-            <div>Ozon Job</div>
-            <div>IT</div>
-            <div>Офис</div>
-            <div>Финтех</div>
-            <div>Fresh</div>
-            <div>Логистика</div>
-            <div>Работа на складе</div>
-            <div>События</div>
+        <div class="flex bg-slate-800 mt-8 px-5 py-3 gap-32">
+            <!-- <div class=" cursor-pointer hover:text-red-600">Работа</div> -->
+            <div class=" cursor-pointer hover:text-red-600">Офис</div>
+            <div class=" cursor-pointer hover:text-red-600">Вакансии</div>
+            <div class=" cursor-pointer hover:text-red-600">IT</div>
+            <div class=" cursor-pointer hover:text-red-600">Партнёры</div>
+            <div class=" cursor-pointer hover:text-red-600">Финтех</div>
+            <div class=" cursor-pointer hover:text-red-600">События</div>
+            <div class=" cursor-pointer hover:text-red-600">Оплата</div>
+            <div class=" cursor-pointer hover:text-red-600">Fresh</div>
+            <div class=" cursor-pointer hover:text-red-600">Логистика</div>
+            <div class=" cursor-pointer hover:text-red-600">Безопасность</div>
+            <div class=" cursor-pointer hover:text-red-600">Другое</div>
         </div>
 
     </footer>
