@@ -1,14 +1,14 @@
 
 
 <template>
-<div v-if="!isLogin" class="menu">
+<div v-if="!isLogin" class=" flex flex-col gap-20">
     <h1 style="text-align: center; margin-top: 10%; font-weight: 600; font-size: 1.1em;">Вход на сайт</h1>
     <div>
         
     </div>
-    <input type="text" v-model="name" placeholder="Имя">
-    <input type="text" v-model="mail" placeholder="Почта">
-    <input type="password" v-model="password" placeholder="Пароль">
+    <input class=" p-3 border rounded-md -mt-4 w-1/6 m-auto bg-sky-950" type="text" v-model="name" placeholder="Имя">
+    <input class=" p-3 border rounded-md -mt-4 w-1/6 m-auto bg-sky-950" type="text" v-model="mail" placeholder="Почта">
+    <input class=" p-3 border rounded-md -mt-4 w-1/6 m-auto bg-sky-950" type="password" v-model="password" placeholder="Пароль">
     <!-- <div>{{ password }}</div> -->
     <div class="error">{{ this.error }}</div>
     <button class="btn" @click="sendInfo">Отправить</button>
@@ -85,18 +85,18 @@
 
 
 <style scoped>
-.menu{
+/* .menu{
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-.menu>input{
+} */
+/* .menu>input{
     padding: 10px;
     border-radius: 5px;
     width: 20%;
     margin: 0 auto;
     background-color: lightblue;
-}
+} */
 .error {
     padding: 0px;
     margin: 0 auto;
