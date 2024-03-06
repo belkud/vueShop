@@ -8,12 +8,17 @@
         <div class="app">
           <post-header/>  
           
-          <post-entrance/>
+          <!-- <post-entrance/> -->
+          
+          <post-advertisement/>
           
           <post-footer/>
 
+
  
-          
+
+
+
             
             <!-- <post-form
             @create2="createPost"
@@ -33,6 +38,7 @@
 import PostEntrance  from "@/components/PostEntrance.vue"
 import PostHeader from "./components/PostHeader.vue";
 import PostFooter from "./components/PostFooter.vue";
+import PostAdvertisement from "./components/PostAdvertisement.vue";
 // import PostForm from "./components/PostForm.vue";
 // import PostList from "@/components/PostList.vue";
 
@@ -42,7 +48,7 @@ import PostFooter from "./components/PostFooter.vue";
 
 export default{
 components: {
-  PostHeader, PostEntrance, PostFooter
+  PostHeader, PostEntrance, PostFooter, PostAdvertisement
   // PostForm, PostList, 
 },
 
