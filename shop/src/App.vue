@@ -8,27 +8,11 @@
         <div class="app">
           <post-header/>  
           
-          <!-- <post-entrance/> -->
           
-          <post-advertisement/>
           
-          <post-footer/>
-
-
- 
-
-
-
-            
-            <!-- <post-form
-            @create2="createPost"
-            />  -->
-            <!-- @create2 - передача данных из ребёнка к родителю -->
-
-            <!-- <post-list 
-               :massive="massive"
-            /> -->
-            <!-- или v-bind:massive="massive"  - отправка массива в postList-->
+          <RouterView />
+          
+      
           </div>
       </template>
 
@@ -39,6 +23,7 @@ import PostEntrance  from "@/components/PostEntrance.vue"
 import PostHeader from "./components/PostHeader.vue";
 import PostFooter from "./components/PostFooter.vue";
 import PostAdvertisement from "./components/PostAdvertisement.vue";
+import { RouterView } from 'vue-router'
 // import PostForm from "./components/PostForm.vue";
 // import PostList from "@/components/PostList.vue";
 

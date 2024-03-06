@@ -11,7 +11,9 @@
                 <div class=" cursor-pointer hover:text-red-600">Избранное &#9829;</div>
             <div class=" cursor-pointer hover:text-red-600">Корзина &#128722</div>
             <div class=" cursor-pointer hover:text-red-600">Баланс карты &#8381</div>
+            <router-link to="/entrance">
             <div v-if="count%2==0" class=" cursor-pointer hover:text-red-600">Войти &#128274;</div>
+            </router-link>
             <div v-if="count%2!=0" class=" cursor-pointer hover:text-red-600">В айти &#128275;</div>
             <div class=" cursor-pointer hover:text-red-600">Служба поддержки &#128222</div>
         <!-- text-3xl mt-3 p-5  text-3xl font-bold -->
@@ -21,6 +23,7 @@
 </template>
 
 <script lang="ts">
+
 export default {
     data(){
         return {
