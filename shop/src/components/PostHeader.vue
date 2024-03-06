@@ -4,7 +4,7 @@
 <!-- 2. Возможно помочь со splice в PostEntrance  -->
 
 <template>
-    <div class=" flex pl-8  gap-16 mt-5 w-full">
+    <div class=" flex pl-8  gap-12 mt-5 w-full">
         <div class=" cursor-pointer hover:text-red-600" @click="conFunc">Каталог &#128366;</div>
             <input placeholder="&#128269; Поиск по сайту" class=" border border-cyan-600 rounded-sm w-2/5 px-3 bg-gray-800"  >
                 <div class=" cursor-pointer hover:text-red-600">Заказы 	&#128504;</div>

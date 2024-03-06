@@ -1,7 +1,7 @@
 
 <template >
     <footer>
-        <div class="flex bg-slate-800 mt-8 px-5 py-3 gap-32">
+        <div class="flex bg-slate-800 mt-8 px-24 py-3 gap-24">
             <!-- <div class=" cursor-pointer hover:text-red-600">Работа</div> -->
             <div class=" cursor-pointer hover:text-red-600">Офис</div>
             <div class=" cursor-pointer hover:text-red-600">Вакансии</div>

@@ -6,12 +6,12 @@
     <div>
         
     </div>
-    <input class=" p-3 border rounded-md -mt-4 w-1/6 m-auto bg-sky-950" type="text" v-model="name" placeholder="Имя">
-    <input class=" p-3 border rounded-md -mt-4 w-1/6 m-auto bg-sky-950" type="text" v-model="mail" placeholder="Почта">
-    <input class=" p-3 border rounded-md -mt-4 w-1/6 m-auto bg-sky-950" type="password" v-model="password" placeholder="Пароль">
+    <input class=" p-3 border rounded-md -mt-12 w-1/6 m-auto bg-sky-950" type="text" v-model="name" placeholder="Имя">
+    <input class=" p-3 border rounded-md -mt-12 w-1/6 m-auto bg-sky-950" type="text" v-model="mail" placeholder="Почта">
+    <input class=" p-3 border rounded-md -mt-12 w-1/6 m-auto bg-sky-950" type="password" v-model="password" placeholder="Пароль">
     <!-- <div>{{ password }}</div> -->
-    <div class="error">{{ this.error }}</div>
-    <button class="btn" @click="sendInfo">Отправить</button>
+    <div class="error ">{{ this.error }}</div>
+    <button class="btn"  @click="sendInfo">Отправить</button>
     <!-- (в конце разные цвета border) -->
 </div>
 <div class="user" v-for="user of users">
@@ -100,6 +100,7 @@
 .error {
     padding: 0px;
     margin: 0 auto;
+    margin-top: -50px;
     min-height: 25px;
 }
 
@@ -121,7 +122,8 @@
 
 .btn {
     background-color: lightblue;
-    margin-left: 60%;
+    margin-left: 55%;
+    margin-top: -6%;
     transition: .3s;
     min-width: 150px;
 }
