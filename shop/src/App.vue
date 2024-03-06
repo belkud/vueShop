@@ -1,7 +1,10 @@
  
+      
+      
+      
       <template>
         
-        <!-- <div class="components">Файл App.Vue</div> -->
+        
         <div class="app">
           <post-header/>  
           
@@ -9,21 +12,18 @@
           
           <post-footer/>
 
-
-          <!-- <post-item /> -->
+ 
+          
             
             <!-- <post-form
             @create2="createPost"
             />  -->
-            <!--! @create2 - передача данных из ребёнка к родителю -->
-
+            <!-- @create2 - передача данных из ребёнка к родителю -->
 
             <!-- <post-list 
                :massive="massive"
             /> -->
-            <!--!  или v-bind:massive="massive"  - отправка массива в postList-->
-
-
+            <!-- или v-bind:massive="massive"  - отправка массива в postList-->
           </div>
       </template>
 
@@ -35,7 +35,6 @@ import PostHeader from "./components/PostHeader.vue";
 import PostFooter from "./components/PostFooter.vue";
 // import PostForm from "./components/PostForm.vue";
 // import PostList from "@/components/PostList.vue";
-// import PostItem from "@/components/PostItem.vue"
 
 
 
@@ -44,7 +43,7 @@ import PostFooter from "./components/PostFooter.vue";
 export default{
 components: {
   PostHeader, PostEntrance, PostFooter
-  // PostForm, PostList, PostItem
+  // PostForm, PostList, 
 },
 
   data(){
