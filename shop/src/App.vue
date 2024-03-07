@@ -4,25 +4,21 @@
       
       <template>
         
-        
         <div class="app">
-          <post-header/>  
-          
-          
+          <post-header/>           
           
           <RouterView />
           
-      
-          </div>
+        </div>
       </template>
 
 
 
 <script>   
-import PostEntrance  from "@/components/PostEntrance.vue"
+import PostEntrance  from "@/view/PostEntrance.vue"
 import PostHeader from "./components/PostHeader.vue";
 import PostFooter from "./components/PostFooter.vue";
-import PostAdvertisement from "./components/PostAdvertisement.vue";
+import PostAdvertisement from "./view/PostAdvertisement.vue";
 import { RouterView } from 'vue-router'
 // import PostForm from "./components/PostForm.vue";
 // import PostList from "@/components/PostList.vue";
